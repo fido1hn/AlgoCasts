@@ -8,8 +8,7 @@
 
 // Starting here
 function reverse(str) {
-  const stack = str.split("");
-  return stack.reverse().join("");
+  return str.split("").reverse().join("");
 }
 
 module.exports = reverse;
