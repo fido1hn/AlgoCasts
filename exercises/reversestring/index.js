@@ -8,7 +8,17 @@
 
 // Starting here
 function reverse(str) {
-  return str.split("").reverse().join("");
+  // Method 1 - builtin array reverse fn
+  // return str.split("").reverse().join("");
+
+  // Method 2 - for loop
+  let reversed = "";
+
+  for (let char of str) {
+    reversed = char + reversed;
+  }
+
+  return reversed;
 }
 
 module.exports = reverse;
