@@ -6,25 +6,43 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-// Starting here - Method 3 using array helper fn reduce
+// Starting here
 function reverse(str) {
-  return str.split("").reduce((reversed, char) => char + reversed, "");
+  let reversed = "";
+
+  for (let char of str) {
+    reversed = char + reversed;
+  }
+
+  return reversed;
 }
 
 module.exports = reverse;
 
 // Method 1 - builtin array reverse fn
-// function reverse(str) {
-//   return str.split("").reverse().join("");
-// }
+/*
+function reverse(str) {
+  return str.split("").reverse().join("");
+}
+*/
 
 // Method 2 - For loop
-// function reverse(str) {
-//   let reversed = "";
+/*
+function reverse(str) {
+  let reversed = "";
+  
+  for (let char of str) {
+    reversed = char + reversed;
+  }
+  
+  return reversed;
+}
+*/
 
-//   for (let char of str) {
-//     reversed = char + reversed;
-//   }
-
-//   return reversed;
-// }
+// Method 3 using array helper fn reduce
+/*
+function reverse(str) {
+  debugger;
+  return str.split("").reduce((reversed, char) => char + reversed, "");
+}
+*/
