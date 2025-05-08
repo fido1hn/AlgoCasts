@@ -5,6 +5,29 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
-function maxChar(str) {}
+function maxChar(str) {
+  let count = {};
+  for (let char of str) {
+    count[char] = count[char] + 1 || 1;
+  }
+  let max = Math.max(...Object.values(count));
+  for (let x in count) {
+    if (count[x] === max) return x;
+  }
+}
 
 module.exports = maxChar;
+
+// My first solution
+/*
+function maxChar(str) {
+  let count = {};
+  for (let char of str) {
+    count[char] = count[char] + 1 || 1;
+  }
+  let max = Math.max(...Object.values(count));
+  for (let x in count) {
+    if (count[x] === max) return x;
+  }
+}
+*/
