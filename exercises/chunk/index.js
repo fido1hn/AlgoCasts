@@ -10,9 +10,13 @@
 
 function chunk(array, size) {
   let chunks = [];
-  while (array.length > 0) {
-    let sub = array.splice(0, size);
-    chunks.push(sub);
+  for (let el of array) {
+    let chunkLast = chunks[chunks.length - 1];
+    if (!chunkLast || chunkLast.length === size) {
+      chunks.push([el]);
+    } else {
+      chunkLast.push(el);
+    }
   }
   return chunks;
 }
@@ -26,6 +30,22 @@ function chunk(array, size) {
   while (array.length > 0) {
     let sub = array.splice(0, size);
     chunks.push(sub);
+  }
+  return chunks;
+}
+*/
+
+// A second solution
+/*
+function chunk(array, size) {
+  let chunks = [];
+  for (let el of array) {
+    let chunkLast = chunks[chunks.length - 1];
+    if (!chunkLast || chunkLast.length === size) {
+      chunks.push([el]);
+    } else {
+      chunkLast.push(el);
+    }
   }
   return chunks;
 }
