@@ -9,14 +9,11 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-  let chunks = [];
-  for (let el of array) {
-    let chunkLast = chunks[chunks.length - 1];
-    if (!chunkLast || chunkLast.length === size) {
-      chunks.push([el]);
-    } else {
-      chunkLast.push(el);
-    }
+  const chunks = [];
+  let index = 0;
+  while (index < array.length) {
+    chunks.push(array.slice(index, index + size));
+    index += size;
   }
   return chunks;
 }
@@ -38,7 +35,7 @@ function chunk(array, size) {
 // A second solution
 /*
 function chunk(array, size) {
-  let chunks = [];
+  const chunks = [];
   for (let el of array) {
     let chunkLast = chunks[chunks.length - 1];
     if (!chunkLast || chunkLast.length === size) {
@@ -46,6 +43,19 @@ function chunk(array, size) {
     } else {
       chunkLast.push(el);
     }
+  }
+  return chunks;
+}
+*/
+
+// A third solution
+/*
+function chunk(array, size) {
+  const chunks = [];
+  let index = 0;
+  while (index < array.length) {
+    chunks.push(array.slice(index, index + size));
+    index += size;
   }
   return chunks;
 }
