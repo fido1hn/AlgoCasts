@@ -9,26 +9,11 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-  const countA = buildCharMap(stringA);
-  const countB = buildCharMap(stringB);
-
-  if (Object.keys(countA).length !== Object.keys(countB).length) return false;
-
-  for (let k in countA) {
-    if (countB[k] !== countA[k]) {
-      return false;
-    }
-  }
-
-  return true;
+  return cleanString(stringA) === cleanString(stringB);
 }
 
-function buildCharMap(str) {
-  const charMap = {};
-  for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
-    charMap[char] = charMap[char]++ || 1;
-  }
-  return charMap;
+function cleanString(str) {
+  return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
 }
 
 module.exports = anagrams;
@@ -87,5 +72,16 @@ function buildCharMap(str) {
     charMap[char] = charMap[char]++ || 1;
   }
   return charMap;
+}
+*/
+
+// A third solution
+/*
+function anagrams(stringA, stringB) {
+  return cleanString(stringA) === cleanString(stringB);
+}
+
+function cleanString(str) {
+  return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
 }
 */
