@@ -17,20 +17,18 @@
 //       '### '
 //       '####'
 
-function steps(n) {
-  for (let row = 0; row < n; row++) {
-    let stairs = "";
-
-    for (let col = 0; col < n; col++) {
-      if (col <= row) {
-        stairs += "#";
-      } else {
-        stairs += " ";
-      }
-    }
-
-    console.log(stairs);
+function steps(n, row = 0, stair = "") {
+  if (n === row) {
+    return;
   }
+  if (n === stair.length) {
+    console.log(stair);
+    return steps(n, row + 1);
+  }
+
+  const add = stair.length <= row ? "#" : " ";
+
+  steps(n, row, stair + add);
 }
 
 module.exports = steps;
@@ -62,5 +60,22 @@ function steps(n) {
 
     console.log(stairs);
   }
+}
+*/
+
+// A third solution with recursion
+/*
+function steps(n, row = 0, stair = "") {
+  if (n === row) {
+    return;
+  }
+  if (n === stair.length) {
+    console.log(stair);
+    return steps(n, row + 1);
+  }
+
+  const add = stair.length <= row ? "#" : " ";
+
+  steps(n, row, stair + add);
 }
 */
