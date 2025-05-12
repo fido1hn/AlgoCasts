@@ -18,10 +18,18 @@
 //       '####'
 
 function steps(n) {
-  for (let i = 1; i <= n; i++) {
-    let spaces = n - i;
-    let steps = i;
-    console.log("#".repeat(steps) + " ".repeat(spaces));
+  for (let row = 0; row < n; row++) {
+    let stairs = "";
+
+    for (let col = 0; col < n; col++) {
+      if (col <= row) {
+        stairs += "#";
+      } else {
+        stairs += " ";
+      }
+    }
+
+    console.log(stairs);
   }
 }
 
@@ -34,6 +42,25 @@ function steps(n) {
     let spaces = n - i;
     let steps = i;
     console.log("#".repeat(steps) + " ".repeat(spaces));
+  }
+}
+*/
+
+// A second solution
+/*
+function steps(n) {
+  for (let row = 0; row < n; row++) {
+    let stairs = "";
+
+    for (let col = 0; col < n; col++) {
+      if (col <= row) {
+        stairs += "#";
+      } else {
+        stairs += " ";
+      }
+    }
+
+    console.log(stairs);
   }
 }
 */
