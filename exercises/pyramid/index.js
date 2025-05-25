@@ -19,8 +19,9 @@ function pyramid(n) {
 
   for (let i = 1; i <= n; i++) {
     let spaces = n - i;
-    let stairs = i === 1 ? i : i + 1;
-    console.log(" ".repeat(spaces) + stair.repeat(i) + " ".repeat(spaces));
+    console.log(
+      " ".repeat(spaces) + stair.repeat(i + (i - 1)) + " ".repeat(spaces)
+    );
   }
 }
 
