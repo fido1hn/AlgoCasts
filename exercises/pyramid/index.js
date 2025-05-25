@@ -15,6 +15,25 @@
 //       '#####'
 
 function pyramid(n) {
+  for (let row = 0; row < n; row++) {
+    let level = "";
+    for (let col = 0; col < 2 * n - 1; col++) {
+      const mid = Math.floor((2 * n - 1) / 2);
+      if (mid - row <= col && mid + row >= col) {
+        level += "#";
+      } else {
+        level += " ";
+      }
+    }
+    console.log(level);
+  }
+}
+
+module.exports = pyramid;
+
+// My solution
+/*
+function pyramid(n) {
   let stair = "#";
 
   for (let i = 1; i <= n; i++) {
@@ -24,5 +43,22 @@ function pyramid(n) {
     );
   }
 }
+*/
 
-module.exports = pyramid;
+// second solution - iterative
+/*
+function pyramid(n) {
+  for (let row = 0; row < n; row++) {
+    let level = "";
+    for (let col = 0; col < 2 * n - 1; col++) {
+      const mid = Math.floor((2 * n - 1) / 2);
+      if (mid - row <= col && mid + row >= col) {
+        level += "#";
+      } else {
+        level += " ";
+      }
+    }
+    console.log(level);
+  }
+}
+*/
